@@ -15,24 +15,12 @@ def polaczenie(graf):
 	return list(dupa.values()).count('3') == len(graf)
 
 
-'''
-	odd_degree_nodes - returns a list of all graf odd degrees nodes
-'''
-
-
 def stopien(graf):
 	stopien_w = []
 	for i in graf:
 		if len(graf[i]) % 2 != 0:
 			stopien_w.append(i)
 	return stopien_w
-
-
-'''
-	from_dict - return a list of tuples links from a graph graf in a 
-	dictionary format
-'''
-
 
 def krawedzie(graf):
 	krawedz = []
@@ -41,17 +29,7 @@ def krawedzie(graf):
 			krawedz.append((i, x))
 	return krawedz
 
-
-'''
-	fleury(graf) - return eulerian trail from graph graf or a 
-	string 'Not Eulerian grafraph' if it's not possible to trail a path
-'''
-
-
 def fleury(graf):
-	'''
-		checks if graf has eulerian cycle or trail
-	'''
 	kupa = stopien(graf)
 	if len(kupa) > 2 or len(kupa) == 1:
 		return 'To nie graf Eulerowy'
